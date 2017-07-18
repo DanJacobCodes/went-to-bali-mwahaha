@@ -10,10 +10,18 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to '/'
+      flash[:notice] = "Product added!"
+      respond_to do |format|
+        format.html { redirect_to product_path (@products)}
+        format.js
+      end
     else
       render :new
     end
