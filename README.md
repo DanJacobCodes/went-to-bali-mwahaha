@@ -12,7 +12,14 @@
 * Ruby/Rails
 
 ## Description
-This project serves as practice with the Ruby on Rails framework and AJAX. Moreover, the purpose of this project was to take an existing project, refactor and debug the code to get to functionality. This project creates a faux E-Commerce site capable of displaying products, adding products to a cart, updating the cart to reflect user additions and deletions, and also implements the bcrypt gem to authenticate users.
+This project serves as practice with the Ruby on Rails framework and AJAX. Moreover, the purpose of this project was to take an existing project, refactor and debug the code to get to functionality. This project creates a faux E-Commerce site capable of displaying products, adding products to a cart, updating the cart to reflect user additions and deletions, and also implements the bcrypt gem to authenticate users as either admins or basic users.
+
+
+### Admin credentials
+```
+Email: danjacob@dan.com
+Password: 123456
+```
 
 ## Setup and Installation
 1. Clone this project into your Desktop directory
@@ -54,6 +61,7 @@ rails s
 * Ruby
 * Ruby on Rails
 * PostgreSQL
+* AJAX     
 
 ### Version
 * Ruby version
