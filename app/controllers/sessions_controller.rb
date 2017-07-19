@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
+      flash[:notice] = "Welcome! You're signed in."
       session[:user_id] = user.id
       redirect_to '/'
     else
@@ -15,6 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    flash[:notice] = "Bye! You've signed out."
     redirect_to '/sign_in'
   end
 
