@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   get 'finalize' => 'carts#finalize'
 
+  resources :charges
+
 end
