@@ -1,4 +1,1 @@
-
-<div class="container">
-<h1><%= @product.name %>
-</h1>
+<p><%= link_to "Add a product", new_product_path(@product), id: "new_product_link", class: "btn btn-default", remote: true %></p>
