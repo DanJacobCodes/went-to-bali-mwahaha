@@ -1,11 +1,18 @@
 class OrderItemsController < ApplicationController
 
   def create
-    @order = current_order
-    @item = @order.order_items.new(item_params)
-    @order.save
-    session[:order_id] = @order.id
-    redirect_to products_path
+    if current_user
+      @order = current_order
+      @item = @order.order_items.new(item_params)
+      @order.save
+      session[:order_id] = @order.id
+      respond_to do |format|
+        format.html { redirect_to products_path }
+        format.js
+      end
+    else
+      redirect_to '/'
+    end
   end
 
   def update
@@ -20,7 +27,10 @@ class OrderItemsController < ApplicationController
     @item = @order.order_items.find(params[:id])
     @item.destroy
     @order.save
-    redirect_to cart_path
+    respond_to do |format|
+      format.html { redirect_to cart_path }
+      format.js
+    end
   end
 
   private
