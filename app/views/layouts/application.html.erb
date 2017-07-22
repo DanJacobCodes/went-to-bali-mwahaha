@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,14 +11,11 @@
   <nav>
     <div class="nav-wrapper">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><%= link_to "Cart | Total items: #{ cart_items }", cart_path %></li>
+        <li id="item_quantity"><%= link_to "Cart | Total items: #{cart_items }", cart_path %></li>
         <li><%= link_to "See all products", products_path %></li>
         <% if current_user %>
           <li><%= current_user.email %></li>
           <li><%= link_to "Sign out", '/sign_out' %></li>
-          <% if current_user && current_user.admin%>
-            <%= link_to "Add a Product", new_product_path, id:"new_product_link", class:"btn btn_default", remote: true %>
-            <% end %>
         <% else %>
           <li><%= link_to "Sign up", 'sign_up' %></li>
           <li><%= link_to "Sign in", '/sign_in' %></li>
@@ -25,12 +23,13 @@
       </ul>
     </div>
   </nav>
-
   <body>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, id: "flash_#{name}", class: "alert alert-info" %>
-    <% end %>
     <div class="container">
+      <p>
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, id: "flash_#{name}" %>
+        <% end %>
+      </p>
       <%= yield %>
     </div>
   </body>

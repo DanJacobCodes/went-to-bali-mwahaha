@@ -4,7 +4,7 @@
 
 ### Specs
 * Users can add products to their shopping cart from the index page with AJAX.
-* Users can click on a product and show/hide the product detail using AJAX. T
+* Users can click on a product and show/hide the product detail using AJAX.
 * Users can remove items from the shopping cart without a page reload. The "delete" link should result in the item being removed from the shopping cart and the total price being updated.
 
 ## Prerequisites
@@ -24,7 +24,7 @@ Password: 123456
 ## Setup and Installation
 1. Clone this project into your Desktop directory
   ```
-  git clone https://github.com/DanJacobCodes/Product-Reviews
+  git clone https://github.com/DanJacobCodes/went-to-bali-mwahaha
   ```
 2. In a separate terminal window launch postgres
 ```
@@ -47,12 +47,22 @@ postgres
 rake db:seed
 ```
 
-6. To run the server and view the application run:
-```
-rails s
-```
+6. Follow Stripe API Instructions to checkout with Stripe
 
-7. Navigate to localhost:3000 in the browser of your choice
+
+## Stripe API Instructions
+
+1. To run the server and view the application run the following in the terminal:
+```
+PUBLISHABLE_KEY=pk_test_6pRNASCoBOKtIshFeQd4XMUh \
+SECRET_KEY=sk_test_BQokikJOvBiI2HlWgH4olfQ2 rails s
+```
+2. Entering in Credit Card Credentials
+ * Enter the special credit card number: 4242 4242 4242 4242
+* A three-digit CVC of your choice
+* And any expiration date in the future
+
+3. Finally, navigate to localhost:3000 in the browser of your choice
 
 
 ## Technologies Used
@@ -62,6 +72,7 @@ rails s
 * Ruby on Rails
 * PostgreSQL
 * AJAX     
+* Stripe API
 
 ### Version
 * Ruby version

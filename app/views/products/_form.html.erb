@@ -1,11 +1,9 @@
-<%= render "layouts/errors", :object => @product %>
-<%= form_for @product, remote: true do |f| %>
-  <%= f.label :name, class: 'new_product' %>
-  <%= f.text_field :name, class: 'new_product' %>
-  <%= f.label :description, class: 'new_product' %>
-  <%= f.text_field :description, class: 'new_product' %>
-  <%= f.label :price, class: 'new_product' %>
-  <%= f.number_field :price, class: 'new_product' %>
+<%= render('layouts/errors', :object => @product) %>
 
-  <%= f.submit "Add",class: 'btn green' %>
+<%= form_for @product do |f| %>
+  Name: <%= f.text_field :name %>
+  Description: <%= f.text_field :description %>
+  Price: <%= f.number_field :price, step: :any %>
+  image: <%= f.text_field :image %>
+<%= f.submit "Submit" %>
 <% end %>
