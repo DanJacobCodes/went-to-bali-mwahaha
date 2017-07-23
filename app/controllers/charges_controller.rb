@@ -1,4 +1,7 @@
 class ChargesController < ApplicationController
+
+
+
     def create
     # Amount in cents
     @amount = 500
